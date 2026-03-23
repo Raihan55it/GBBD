@@ -1,0 +1,264 @@
+/* Footer Styles */
+
+/* Main footer container */
+.its-footer {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 2fr 1.5fr;
+  gap: 30px;
+  margin: 40px 20px 20px 20px;
+  padding: 40px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer sections */
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 20px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 8px;
+}
+
+.footer-section h4 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-section p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* About section */
+.about p {
+  text-align: justify;
+}
+
+.payment-methods {
+  margin-top: 15px;
+}
+
+.payment-methods p {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.payment-methods span {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+/* Contact section */
+.contact-info p {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-info strong {
+  color: #333;
+  min-width: 80px;
+}
+
+/* Quick links section */
+.links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.links-grid div h4 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+.links-grid ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links-grid li {
+  margin-bottom: 8px;
+}
+
+.links-grid a {
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.links-grid a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* Social section */
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #007bff;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+.social-links a:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Newsletter section */
+.newsletter h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.newsletter-form button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.newsletter-form button:hover {
+  background: #0056b3;
+}
+
+/* Copyright section */
+.copyright {
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-top: 1px solid #e9ecef;
+  margin: 0 20px;
+  border-radius: 0 0 8px 8px;
+}
+
+.copyright p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Footer responsive design */
+@media (max-width: 1024px) {
+  .its-footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 30px;
+  }
+  
+  .footer-section:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .its-footer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    margin: 20px 10px 10px 10px;
+  }
+  
+  .footer-section:last-child {
+    grid-column: span 1;
+  }
+  
+  .links-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .its-footer {
+    margin: 15px 5px 5px 5px;
+    padding: 15px;
+  }
+  
+  .footer-section h2 {
+    font-size: 18px;
+  }
+  
+  .footer-section h4 {
+    font-size: 14px;
+  }
+  
+  .social-links a {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+  
+  .copyright {
+    margin: 0 5px 5px 5px;
+    padding: 15px;
+  }
+  
+  .copyright p {
+    font-size: 12px;
+  }
+}

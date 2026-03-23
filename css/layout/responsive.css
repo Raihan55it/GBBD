@@ -1,0 +1,351 @@
+/* Responsive Design Styles */
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+  .all-product {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 40px;
+  }
+  
+  .card-pro {
+    width: 300px;
+    height: 420px;
+  }
+  
+  .com-details {
+    padding: 0 150px;
+  }
+}
+
+/* Desktop (992px to 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .com-details {
+    padding: 0 80px;
+  }
+  
+  .all-product {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  
+  .card-pro {
+    width: 260px;
+    height: 380px;
+  }
+}
+
+/* Tablet (768px to 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .com-details {
+    padding: 0 40px;
+  }
+  
+  .search-icon {
+    max-width: 250px;
+  }
+  
+  .pro-cat-li li {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+  
+  .all-product {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    padding: 25px;
+  }
+  
+  .card-pro {
+    width: 240px;
+    height: 360px;
+  }
+  
+  .card-img {
+    height: 220px;
+  }
+  
+  .des-div {
+    padding: 12px;
+  }
+  
+  .des-div h3 {
+    font-size: 15px;
+  }
+  
+  .current-price {
+    font-size: 16px;
+  }
+}
+
+/* Mobile (480px to 767px) */
+@media (max-width: 767px) and (min-width: 480px) {
+  .com-details {
+    padding: 0 20px;
+    height: auto;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .com-details > div {
+    flex: none;
+  }
+  
+  .header-actions {
+    justify-content: center;
+    order: 3;
+  }
+  
+  .search-icon {
+    order: 1;
+    max-width: 100%;
+  }
+  
+  .logo {
+    order: 2;
+  }
+  
+  .pro-cat-li {
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+  }
+  
+  .pro-cat-li li {
+    padding: 8px 12px;
+    font-size: 12px;
+    margin: 2px;
+    border-radius: 20px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+  }
+  
+  .pro-cat-li li:hover {
+    border-bottom: none;
+    transform: none;
+    background: #e9ecef;
+  }
+  
+  .pro-cat-li li.active {
+    border-bottom: none;
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+  
+  .baner-with-pic img {
+    height: 250px;
+    border-radius: 6px;
+  }
+  
+  .all-product {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px 15px;
+  }
+  
+  .card-pro {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+  }
+  
+  .card-img {
+    width: 100%;
+    height: 180px;
+  }
+  
+  .des-div {
+    padding: 10px;
+  }
+  
+  .des-div h3 {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+  
+  .current-price {
+    font-size: 15px;
+  }
+  
+  .btn-div {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .add-cart,
+  .order-now-btn {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .user-text {
+    display: none;
+  }
+  
+  #myBtn {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Small Mobile (320px to 479px) */
+@media (max-width: 479px) {
+  .com-details {
+    padding: 0 15px;
+  }
+  
+  .order-sec {
+    height: auto;
+    padding: 8px;
+  }
+  
+  .order-p-tag p {
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  .pro-cat-li {
+    padding: 8px;
+  }
+  
+  .pro-cat-li li {
+    padding: 6px 10px;
+    font-size: 11px;
+    margin: 1px;
+  }
+  
+  .logo-img {
+    height: 50px;
+    width: 50px;
+  }
+  
+  .cart-icon {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  
+  .user-account {
+    padding: 6px 10px;
+  }
+  
+  .baner-with-pic img {
+    height: 200px;
+  }
+  
+  .all-product {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 15px 10px;
+  }
+  
+  .card-pro {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .card-img {
+    height: 220px;
+  }
+  
+  .des-div h3 {
+    font-size: 16px;
+  }
+  
+  .current-price {
+    font-size: 17px;
+  }
+  
+  .stars {
+    font-size: 14px;
+  }
+  
+  #myBtn {
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Landscape Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .com-food-cat {
+    position: relative;
+  }
+  
+  .baner-with-pic {
+    margin: 10px 0;
+  }
+  
+  .baner-with-pic img {
+    height: 200px;
+  }
+  
+  .all-product {
+    padding: 15px;
+  }
+  
+  .card-pro {
+    height: 320px;
+  }
+  
+  .card-img {
+    height: 180px;
+  }
+}
+
+/* High DPI/Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo-img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+  
+  .card-img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Dark Mode Support (if implemented) */
+@media (prefers-color-scheme: dark) {
+  /* This would be implemented when dark mode is added */
+  /* Currently keeping light theme as default */
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .order-sec,
+  .com-food-cat,
+  #myBtn {
+    display: none !important;
+  }
+  
+  .all-product {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .card-pro {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .btn-div {
+    display: none;
+  }
+}
