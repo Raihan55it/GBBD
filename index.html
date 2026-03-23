@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#28a745" />
+    <!-- Complete CSS (all styles in one file to avoid import issues) -->
+    <link rel="stylesheet" href="complete-style.css" />
+    <title>BD eBazar - Premium Bangladeshi Food Products Online</title>
+    <meta
+      name="description"
+      content="Shop premium quality Bangladeshi food products including dates, honey, ghee, nuts, and more. Authentic products with fast delivery nationwide."
+    />
+    <meta
+      name="keywords"
+      content="Bangladesh food, dates, honey, ghee, nuts, masala, tea, coffee, online shopping"
+    />
+    <meta name="author" content="BD eBazar" />
+    <meta
+      property="og:title"
+      content="BD eBazar - Premium Bangladeshi Food Products"
+    />
+    <meta
+      property="og:description"
+      content="Shop authentic Bangladeshi food products online"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://bdebazar.com" />
+
+    <!-- Google Analytics (placeholder - replace with your tracking ID) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "GA_MEASUREMENT_ID");
+    </script>
+
+    <!-- Module-based JavaScript Application -->
+    <script type="module" src="js/app.js"></script>
+    <!-- Legacy fallback -->
+    <!-- <script src="simple-products.js"></script> -->
+  </head>
+  <body>
+    <!-- Section for the order prompt message -->
+    <section class="order-sec">
+      <div class="order-p-tag">
+        <p>
+          🚚 Free Delivery on orders over ৳1000 | 📞 Order Hotline: 01712-345678
+        </p>
+      </div>
+    </section>
+
+    <div class="com-food-cat">
+      <!-- Mobile Header: Search + Logo + Hamburger + Cart (All in one row) -->
+      <div class="header-mobile">
+        <div class="search-with-logo">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input-mobile" placeholder="Search Products" />
+          <div class="logo-mobile">
+            <img class="logo-img" src="imageForGBBD/logo2.jpg" alt="BD eBazar Logo" />
+          </div>
+        </div>
+        <div class="header-actions-mobile">
+          <div class="search-toggle" id="searchToggle">
+            <span>🔍</span>
+          </div>
+          <div class="wishlist-icon" id="wishlistIcon" title="Wishlist">❤️</div>
+          <div class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="cart-icon" id="cartIcon">🛒</div>
+        </div>
+      </div>
+      <!-- Desktop Header -->
+      <div class="com-details">
+        <div class="search-icon">
+          <span>🔍</span>
+          <input type="text" id="search-input" placeholder="Search Products" />
+        </div>
+        <div class="logo logo-desktop">
+          <img class="logo-img" src="imageForGBBD/logo2.jpg" alt="BD eBazar Logo" />
+        </div>
+        <div class="header-actions">
+          <div class="wishlist-icon" id="wishlistIconDesktop" title="Wishlist">❤️ Wishlist</div>
+          <div class="user-account" onclick="showUserMenu()">
+            <span>👤</span>
+            <span class="user-text">Account</span>
+          </div>
+          <div class="cart-icon" id="cartIconDesktop">🛒 Cart</div>
+        </div>
+      </div>
+      <!-- Product categories navigation -->
+      <div class="pro-cat">
+        <ul class="pro-cat-li">
+          <li data-category="All" class="active">All</li>
+          <li data-category="Dates">Dates</li>
+          <li data-category="Fun Food">Fun Food</li>
+          <li data-category="Ghee">Ghee</li>
+          <li data-category="Honey">Honey</li>
+          <li data-category="Masala">Masala</li>
+          <li data-category="Nuts">Nuts</li>
+          <li data-category="Oil">Oil</li>
+          <li data-category="Tea Coffee">Tea Coffee</li>
+        </ul>
+        <div class="sort-container">
+          <label for="product-sort">Sort by:</label>
+          <select id="product-sort">
+            <option value="default">Default</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+            <option value="name-asc">Name: A-Z</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!-- Banner section -->
+    <div class="baner-with-pic">
+      <img src="imageForGBBD/pureHero.png" alt="" />
+    </div>
+
+    <!-- Mobile Sidebar Menu -->
+    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile menu" aria-hidden="true">
+      <div class="menu-header">
+        <h3>Menu</h3>
+        <button class="close-menu" id="closeMenu" aria-label="Close menu">&times;</button>
+      </div>
+      <ul class="menu-links" role="menu">
+        <li data-category="All" role="menuitem">All Products</li>
+        <li data-category="Dates" role="menuitem">Dates</li>
+        <li data-category="Fun Food" role="menuitem">Fun Food</li>
+        <li data-category="Ghee" role="menuitem">Ghee</li>
+        <li data-category="Honey" role="menuitem">Honey</li>
+        <li data-category="Masala" role="menuitem">Masala</li>
+        <li data-category="Nuts" role="menuitem">Nuts</li>
+        <li data-category="Oil" role="menuitem">Oil</li>
+        <li data-category="Tea Coffee" role="menuitem">Tea & Coffee</li>
+      </ul>
+    </div>
+    <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+    <!-- Container for all products -->
+    <div class="all-product" id="allProduct"></div>
+    
+    <!-- Recently Viewed Products -->
+    <section class="recently-viewed" id="recentlyViewedSection" style="display: none;">
+      <h2>Recently Viewed</h2>
+      <div class="recently-viewed-container" id="recentlyViewedContainer"></div>
+    </section>
+    
+    <button id="myBtn" title="Go to Top">Top</button>
+
+    <!-- Footer section with comprehensive information -->
+    <footer class="its-footer">
+      <div class="footer-section about">
+        <h2>About BD eBazar</h2>
+        <p>
+          Your trusted online marketplace for premium Bangladeshi food products.
+          We source authentic, high-quality dates, honey, ghee, nuts, and more
+          directly from trusted suppliers across Bangladesh.
+        </p>
+        <div class="payment-methods">
+          <p><strong>Payment Methods:</strong></p>
+          <span>Cash on Delivery</span>
+          <span>bKash</span>
+          <span>Nagad</span>
+          <span>Bank Transfer</span>
+        </div>
+      </div>
+
+      <div class="footer-section contact-us">
+        <h2>Contact Information</h2>
+        <div class="contact-info">
+          <p><strong>📞 Hotline:</strong> 01712-345678</p>
+          <p><strong>📱 WhatsApp:</strong> 01812-345678</p>
+          <p><strong>📧 Email:</strong> info@bdebazar.com</p>
+          <p><strong>🕐 Business Hours:</strong></p>
+          <p>Saturday - Thursday: 9:00 AM - 8:00 PM</p>
+          <p>Friday: 10:00 AM - 6:00 PM</p>
+        </div>
+      </div>
+
+      <div class="footer-section quick-links">
+        <h2>Quick Links</h2>
+        <div class="links-grid">
+          <div>
+            <h4>Shop by Category</h4>
+            <ul>
+              <li><a href="#" onclick="filterByCategory('Dates')">Dates</a></li>
+              <li><a href="#" onclick="filterByCategory('Honey')">Honey</a></li>
+              <li><a href="#" onclick="filterByCategory('Ghee')">Ghee</a></li>
+              <li><a href="#" onclick="filterByCategory('Nuts')">Nuts</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#" onclick="showHelpCenter()">Help Center</a></li>
+              <li>
+                <a href="#" onclick="showShippingInfo()">Shipping Info</a>
+              </li>
+              <li>
+                <a href="#" onclick="showReturnPolicy()">Return Policy</a>
+              </li>
+              <li><a href="#" onclick="showTerms()">Terms & Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-section social">
+        <h2>Follow Us</h2>
+        <div class="social-links">
+          <a href="https://facebook.com/bdebazar" target="_blank" rel="noopener noreferrer"
+            >📘 Facebook</a
+          >
+          <a href="https://youtube.com/@bdebazar" target="_blank" rel="noopener noreferrer">📺 YouTube</a>
+          <a href="https://instagram.com/bdebazar" target="_blank" rel="noopener noreferrer"
+            >📷 Instagram</a
+          >
+        </div>
+        <div class="newsletter">
+          <h4>Subscribe for Updates</h4>
+          <div class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Your email"
+              id="newsletter-email"
+            />
+            <button onclick="subscribeNewsletter()">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="copyright">
+      <p>
+        &copy; 2024 BD eBazar. All rights reserved. | Made with ❤️ in Bangladesh
+      </p>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+      <div class="cart-drawer-header">
+        <h3>Shopping Cart</h3>
+        <button class="cart-drawer-close" id="cartDrawerClose">&times;</button>
+      </div>
+      <div class="cart-drawer-body" id="cartDrawerBody">
+        <!-- Cart items will be rendered here -->
+      </div>
+      <div class="cart-drawer-footer" id="cartDrawerFooter">
+        <div class="cart-drawer-total">
+          <span>Total:</span>
+          <span id="cartTotalAmount">৳0</span>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+      </div>
+    </div>
+
+    <!-- Wishlist Drawer -->
+    <div class="wishlist-drawer-overlay" id="wishlistDrawerOverlay"></div>
+    <div class="wishlist-drawer" id="wishlistDrawer">
+      <div class="wishlist-drawer-header">
+        <h3>My Wishlist</h3>
+        <button class="wishlist-drawer-close" id="wishlistDrawerClose">&times;</button>
+      </div>
+      <div class="wishlist-drawer-body" id="wishlistDrawerBody">
+        <!-- Wishlist items will be rendered here -->
+      </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal" id="quickViewModal">
+      <div class="quick-view-content">
+        <button class="quick-view-close" id="quickViewClose">&times;</button>
+        <div class="quick-view-body" id="quickViewBody">
+          <!-- Product details will be rendered here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer"></div>
+
+  </body>
+</html>

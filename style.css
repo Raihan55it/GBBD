@@ -1,0 +1,233 @@
+/* ========================================
+   BD eBazar - Main Stylesheet
+   ========================================
+   Modular CSS Architecture for maintainability
+*/
+
+/* Base Styles */
+@import url('./base/reset.css');
+
+/* Component Styles */
+@import url('./css/components/header.css');
+@import url('./css/components/products.css');
+@import url('./css/components/footer.css');
+@import url('./css/components/modals.css');
+@import url('./css/components/cart.css');
+@import url('./css/components/checkout.css');
+@import url('./css/components/forms.css');
+
+/* Layout Styles */
+@import url('./css/layout/responsive.css');
+
+/* Utility Styles */
+@import url('./css/utils/animations.css');
+@import url('./css/utils/utilities.css');
+
+/* ========================================
+   Additional Global Styles
+   ========================================
+*/
+
+/* Hidden utility for dynamic show/hide */
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}
+
+/* Loading overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-overlay .loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Focus styles for accessibility */
+.focus-visible {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Print optimization */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .current-price {
+    color: #000 !important;
+    font-weight: bold;
+  }
+  
+  .discount-badge {
+    background: #000 !important;
+    color: #fff !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   Component-specific overrides and fixes
+   ========================================
+*/
+
+/* Fix for header category items duplication */
+.pro-cat-li li.active {
+  background-color: #e9ecef;
+}
+
+/* Ensure proper spacing in cart items */
+.cart-item-image {
+  flex-shrink: 0;
+}
+
+/* Fix for modal z-index stacking */
+.modal-overlay,
+.auth-modal,
+.checkout-modal,
+.cart-modal,
+.info-modal,
+.product-modal,
+.user-actions-modal {
+  z-index: 10002;
+}
+
+/* Fix for form validation display */
+.form-group .error-message {
+  display: block;
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Fix for button hover states */
+.btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Fix for product card image aspect ratio */
+.card-img {
+  object-fit: cover;
+  aspect-ratio: 1.12 / 1;
+}
+
+/* Fix for banner image responsiveness */
+.baner-with-pic img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* ========================================
+   Custom properties for theming
+   ========================================
+*/
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  
+  --primary-hover: #0056b3;
+  --success-hover: #218838;
+  --danger-hover: #c82333;
+  
+  --border-radius: 6px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition: all 0.2s ease;
+  
+  --font-family: 'Arial', sans-serif;
+  --font-size-base: 14px;
+  --line-height-base: 1.6;
+}
+
+/* ========================================
+   Dark mode support (future implementation)
+   ========================================
+*/
+@media (prefers-color-scheme: dark) {
+  /* Future dark mode styles can be added here */
+  /* Currently keeping light theme as default */
+}
+
+/* ========================================
+   Performance optimizations
+   ========================================
+*/
+
+/* Optimize animations for performance */
+.animate-fade-in,
+.animate-slide-up,
+.animate-scale-in {
+  will-change: opacity, transform;
+}
+
+/* Optimize for GPU acceleration */
+.card-pro:hover,
+.btn:hover,
+.modal-content {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ========================================
+   Browser-specific fixes
+   ========================================
+*/
+
+/* Safari fix for flexbox */
+@supports (-webkit-appearance: none) {
+  .com-details {
+    -webkit-box-align: center;
+  }
+}
+
+/* Firefox fix for scrollbars */
+@-moz-document url-prefix() {
+  .cart-items,
+  .checkout-body {
+    scrollbar-width: thin;
+  }
+}

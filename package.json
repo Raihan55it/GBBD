@@ -1,0 +1,27 @@
+{
+  "name": "gbbd-ecommerce",
+  "version": "1.0.0",
+  "description": "GBBD - Great Bangladeshi Food Delivery E-commerce Platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve -s . -l 3000",
+    "build": "echo 'Build completed - static files ready'",
+    "dev": "serve -s . -l 3000",
+    "test": "echo 'No tests specified yet'"
+  },
+  "keywords": [
+    "ecommerce",
+    "bangladeshi-food",
+    "food-delivery",
+    "static-site"
+  ],
+  "author": "GBBD Team",
+  "license": "MIT",
+  "dependencies": {
+    "serve": "^14.2.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
