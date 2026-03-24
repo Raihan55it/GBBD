@@ -125,11 +125,6 @@ class App {
         
         document.getElementById('search-input-mobile')?.addEventListener('input', (e) => {
             debouncedSearch(e.target.value);
-            // Hide banner on mobile search
-            const banner = document.querySelector('.baner-with-pic');
-            const orderSec = document.querySelector('.order-sec');
-            if (banner) banner.style.display = 'none';
-            if (orderSec) orderSec.display = 'none';
         });
         
         // Mobile menu
@@ -351,11 +346,16 @@ class App {
         this.productService.filterBySearch(query);
         this.renderProducts();
         
-        if (!query) {
+        const banner = document.querySelector('.baner-with-pic');
+        const orderSec = document.querySelector('.order-sec');
+        
+        if (query) {
+            // Hide banner when searching
+            if (banner) banner.style.display = 'none';
+            if (orderSec) orderSec.style.display = 'none';
+        } else {
             // Restore banner if search is cleared and no category selected
             if (this.currentCategory === 'All') {
-                const banner = document.querySelector('.baner-with-pic');
-                const orderSec = document.querySelector('.order-sec');
                 if (banner) banner.style.display = '';
                 if (orderSec) orderSec.style.display = '';
             }

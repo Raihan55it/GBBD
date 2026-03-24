@@ -33,16 +33,16 @@
   height: 70px;
   background-color: #fff;
   z-index: 1000;
-  padding: 0 100px;
+  padding: 0 40px;
+  position: relative;
 }
 
-.com-details > div {
-  flex: 1;
-}
-
-/* Logo styling */
+/* Logo styling - CENTERED */
 .logo {
-  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 .logo-img {
@@ -52,6 +52,18 @@
   margin-top: 2px;
   margin-bottom: 2px;
   object-fit: cover;
+}
+
+/* Search styling - left side */
+.search-icon {
+  flex: 1;
+  max-width: 300px;
+}
+
+/* Header actions styling - right side */
+.header-actions {
+  flex: 1;
+  justify-content: flex-end;
 }
 
 /* Header actions styling */

@@ -163,6 +163,7 @@ img {
     z-index: 1000;
     will-change: transform;
     transition: transform 0.3s ease-in-out;
+    position: relative;
 }
 
 .header-mobile.hide {
@@ -172,12 +173,11 @@ img {
 .search-with-logo {
     display: flex;
     align-items: center;
-    flex: 1;
     background: #f5f5f5;
     border-radius: 25px;
     padding: 8px 15px;
     gap: 10px;
-    max-width: 70%;
+    max-width: 50%;
     transition: transform 0.3s ease;
 }
 
@@ -196,7 +196,10 @@ img {
     padding: 0;
 }
 
-.search-with-logo .logo-mobile {
+.logo-mobile {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     flex-shrink: 0;
 }
 
